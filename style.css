@@ -1,12 +1,108 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 * {
-  box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-/* Add styles here! */
+/** css vars **/
+:root {
+    /** Color palette **/
+    /** Primary (green): **/
+    --primary-color: hsl(160deg, 100%, 30%);
+    /** Secondary (gold)**/
+    --secondary-color-light: hsl(45deg, 100%, 50%);
+    --secondary-color: hsl(45deg, 100%, 40%);
+    /** Shades of gray **/
+    --black-color: hsl(0deg, 0%, 0%);
+    --grey-very-dark-color: hsl(0deg, 0%, 10%);
+    --grey-dark-color: hsl(0deg, 0%, 30%);
+    --grey-medium-color: hsl(0deg, 0%, 40%);
+    --grey-light-color: hsl(0deg, 0%, 60%);
+    --white-color: hsl(0deg, 0%, 100%);
+
+    /** space unit **/
+    --space: 8px;
+
+    /** font **/
+    --normal-font-size: 1rem;
+    --big-font-size: 1.25rem;
+    --very-big-font-size: 1.5rem;
+    --biggest-font-size: 2rem;
+
+    /** borders **/
+    --border-size: 5px;
+    --border-bottom: var(--border-size) solid var(--grey-medium-color);
+}
+
+body {
+    color: var(--grey-very-dark-color);
+    background-color: var(--grey-light-color);
+    font-size: var(--normal-font-size);
+}
+
+h1 {
+    font-size: var(--very-big-font-size);
+}
+
+h2 {
+    font-size: var(--big-font-size);
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+.max-width-wrapper {
+    max-width: calc(var(--space) * 64);
+}
+
+main > *, header > * {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(var(--space) * 3);
+}
+
+/** header **/
+header {
+    background-color: var(--white-color);
+    padding: calc(var(--space) * 4) 0;
+    border-bottom: var(--border-bottom);
+}
+
+header .title {
+    padding-bottom: var(--space);
+}
+
+header .intro-chunk {
+    max-width: calc(var(--space) * 32)
+}
+
+/** content **/
+main .card {
+    background-color: var(--white-color);
+    padding: calc(var(--space) * 1) calc(var(--space) * 3);
+    margin-left: calc(var(--space) * -3);
+    margin-top: calc(var(--space) * 6);
+    border-bottom: var(--border-bottom);
+}
+
+main .card .indented-heading {
+    width: fit-content;
+    padding: calc(var(--space) * 2);
+    background-color: var(--secondary-color-light);
+    border-bottom: var(--border-size) solid var(--secondary-color);
+    margin-top: 0;
+    margin-left: calc(var(--space) * -5);
+    padding-left: calc(var(--space) * 5);;
+}
